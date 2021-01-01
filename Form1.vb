@@ -13,6 +13,7 @@
         If TrackBar1.Value = 1 Then
             Quality_Indicator.Text = "MQ"
         End If
+        Me.get_imglink()
     End Sub
     Private Sub get_imglink()
         If TrackBar1.Value = 1 Then
@@ -75,6 +76,7 @@
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         If Class1.s = True Then
+            webView.CoreWebView2.Navigate(imgurl.Text)
             WebBrowser1.Navigate(imgurl.Text)
         Else
             MessageBox.Show("Sumbit First!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -98,5 +100,13 @@
         Else
             MessageBox.Show("Sumbit First!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Process.Start("https://go.microsoft.com/fwlink/p/?LinkId=2124703")
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Process.Start("https://developer.microsoft.com/microsoft-edge/webview2/#download-section")
     End Sub
 End Class
